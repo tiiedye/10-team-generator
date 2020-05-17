@@ -14,8 +14,8 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-const teamMembers = [];
-const idArray = [];
+const members = [];
+const ids = [];
 
 function appMenu() {
 
@@ -73,8 +73,8 @@ function appMenu() {
                 }
             ]).then(answers => {
                 const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
-                teamMembers.push(manager);
-                idArray.push(answers.managerId);
+                members.push(manager);
+                ids.push(answers.managerId);
                 createTeam();
             });
     }
@@ -85,7 +85,7 @@ function appMenu() {
                 {
                     type: "list",
                     name: "memberChoice",
-                    message: "Whiche type of team member would you like to add?",
+                    message: "Which type of team member would you like to add?",
                     choices: [
                         "Engineer",
                         "Intern",
@@ -126,7 +126,7 @@ function appMenu() {
                     name: "engineerId",
                     message: "What is your Engineer's Id?",
                     validate: answer => {
-                        if (idArray.includes(answer)) {
+                        if (ids.includes(answer)) {
                             return "This Id is already taken, please enter a different one.";
                         } else if (answer > 0) {
                             return true;
@@ -161,8 +161,8 @@ function appMenu() {
                 }
             ]).then(answers => {
                 const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
-                teamMembers.push(engineer);
-                idArray.push(answers.engineerId);
+                members.push(engineer);
+                ids.push(answers.engineerId);
                 createTeam();
             })
     }
@@ -187,7 +187,7 @@ function appMenu() {
                     name: "internId",
                     message: "Please enter your Intern's Id.",
                     validate: answer => {
-                        if (idArray.includes(answer)) {
+                        if (ids.includes(answer)) {
                             return "This Id is already taken, please enter a different one.";
                         } else if (answer > 0) {
                             return true;
@@ -222,8 +222,8 @@ function appMenu() {
                 }
             ]).then(answers => {
                 const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
-                teamMembers.push(intern);
-                idArray.push(answers.internId);
+                members.push(intern);
+                ids.push(answers.internId);
                 createTeam();
             });
     }
@@ -238,7 +238,7 @@ function appMenu() {
     // does not.
 
     function buildTeam() {
-        fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+        fs.writeFileSync(outputPath, render(members), "utf-8");
     }
 
     createManager();
