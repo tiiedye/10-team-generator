@@ -15,5 +15,7 @@
     
     I ran into a lot of errors with this when i tried just using this.NAMEHERE.
 
+6. added notes to the files to explain what was happening
+
 Because of how the tests were written i felt that the code needed to be written in a very specific way as to not throw errors. If I had not been given the lib/template/and tests along with example code I may have written this assignment much differently, and probably in a lot less organized way. Being able to break down code and figure out why something works and another way doesn't really helped me out in this assignment.
 

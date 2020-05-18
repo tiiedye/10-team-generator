@@ -1,3 +1,4 @@
+// required
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -5,20 +6,26 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+// paths to put "team.html" into "output" folder when the html file is generated later in the code
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
+// calls back to the htmlRenderer.js in the lib file. this will be used to render the html in the templates folder
 const render = require("./lib/htmlRenderer");
 
-
+// *** INSTRUCTIONS ***
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+// *** /INSTRUCTIONS ***
 
+// empty arrays for team members and team id numbers. information gathered from the inquirer.prompt will be pushed to the arrays
 const members = [];
 const ids = [];
 
+// this function runs the application, and includes the inquirer.prompt content, as well as creating the html file.
 function appMenu() {
 
+    // creates manager profile
     function createManager() {
         console.log("Please build your team");
         inquirer
@@ -79,6 +86,7 @@ function appMenu() {
             });
     }
 
+    // begins to create team-members profiles
     function createTeam() {
         inquirer
             .prompt([
@@ -106,6 +114,7 @@ function appMenu() {
             });
     }
 
+    // creates engineer profile if adding engineer is chosen
     function addEngineer() {
         inquirer
             .prompt([
@@ -167,6 +176,7 @@ function appMenu() {
             })
     }
 
+    // adds intern profile if add intern is chosen
     function addIntern() {
         inquirer
             .prompt ([
@@ -227,6 +237,8 @@ function appMenu() {
                 createTeam();
             });
     }
+
+    // *** INTSRUCTIONS ***
     // After the user has input all employees desired, call the `render` function (required
     // above) and pass in an array containing all employee objects; the `render` function will
     // generate and return a block of HTML including templated divs for each employee!
@@ -236,7 +248,9 @@ function appMenu() {
     // `output` folder. You can use the variable `outputPath` above target this location.
     // Hint: you may need to check if the `output` folder exists and create it if it
     // does not.
+    // *** /INTSRUCTIONS ***
 
+    // writes the team.html file using the information gathered and puts that file in the "output" folder
     function buildTeam() {
         fs.writeFileSync(outputPath, render(members), "utf-8");
     }
@@ -248,7 +262,7 @@ appMenu();
 
 
 
-
+// *** MORE INSTRUCTIONS ***
 // HINT: each employee type (manager, engineer, or intern) has slightly different
 // information; write your code to ask different questions via inquirer depending on
 // employee type.
