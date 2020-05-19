@@ -35,10 +35,10 @@ function appMenu() {
                     name: "managerName",
                     message: "What is your Manager's name?",
                     validate: answer => {
-                        if (answer !== "") {
-                            return true;
-                        } else {
+                        if (!answer) {
                             return "Please enter at least one character.";
+                        } else {
+                            return true;
                         }
                     }
                 },
@@ -59,10 +59,10 @@ function appMenu() {
                     name: "managerEmail",
                     message: "What is your Manager's email address?",
                     validate: answer => {
-                        if (answer !== "") {
-                            return true;
-                        } else {
+                        if (!answer) {
                             return "Please enter a valid email address.";
+                        } else {
+                            return true;
                         }
                     }
                 },
@@ -123,10 +123,10 @@ function appMenu() {
                     name: "engineerName",
                     message: "What is your Engineer's name?",
                     validate: answer => {
-                        if (answer !== "") {
-                            return true;
-                        } else {
+                        if (!answer) {
                             return "PLease enter at least one character.";
+                        } else {
+                            return true;
                         }
                     }
                 },
@@ -149,10 +149,10 @@ function appMenu() {
                     name: "engineerEmail",
                     message: "What is your Engineer's email address?",
                     validate: answer => {
-                        if (answer !== "") {
-                            return true;
-                        } else {
+                        if (!answer) {
                             return "PLease enter a valid email address.";
+                        } else {
+                            return true;
                         }
                     }
                 },
@@ -161,10 +161,10 @@ function appMenu() {
                     name: "engineerGithub",
                     message: "What is your Engineer's GitHub username?",
                     validate: answer => {
-                        if (answer !== "") {
-                            return true;
-                        } else {
+                        if (!answer) {
                             return "Please enter at least one character.";
+                        } else {
+                            return true;
                         }
                     }
                 }
@@ -185,10 +185,10 @@ function appMenu() {
                     name: "internName",
                     message: "What is  your Intern's name?",
                     validate: answer => {
-                        if (answer !== "") {
-                            return true;
-                        } else {
+                        if (!answer) {
                             return "Please enter at least one character.";
+                        } else {
+                            return true;
                         }
                     }
                 },
@@ -211,10 +211,10 @@ function appMenu() {
                     name: "internEmail",
                     message: "What is your Intern's email address?",
                     validate: answer => {
-                        if (answer !== "") {
-                            return true;
-                        } else {
+                        if (!answer) {
                             return "Please enter a valid email address.";
+                        } else {
+                            return true;
                         }
                     }
                 },
@@ -223,10 +223,10 @@ function appMenu() {
                     name: "internSchool",
                     message: "What is your Instern's school?",
                     validate: answer => {
-                        if (answer !== "") {
-                            return true;
-                        } else {
+                        if (!answer) {
                             return "Please enter at least one character.";
+                        } else {
+                            return true;
                         }
                     }
                 }
