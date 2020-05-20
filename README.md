@@ -3,7 +3,7 @@
 1. moved necessary files from the UCLA repo
 2. installed npm files
 3. began work on the lib folder, starting with employee.
-    * first began trying to write the file using function/constructor, but could not get it to work. then moved onto using class/constructor name/constructor attributes and things began to fall in place.
+    * first began trying to write the file using function/constructor name, but could not get it to work. then moved onto using class/constructor name/constructor attributes and things began to fall in place.
     * added callback functions to pull this.name/id/email on employee.js, and the other more specific information on manager, engineer, and intern.
     * made sure to require employee.js on engineer/intern/manager files so they could use information from the employee file.
 4. began writing code for app.js
