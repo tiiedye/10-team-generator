@@ -13,7 +13,7 @@
 5. ran tests
     * in lib files, using this."Name of variable" does not work, except in Employee file and other variables not in the employee file (i.e. in the intern file using this.school). This is because you need to call back to the employee files to get that information, using super in the constructor.
     
-    I ran into a lot of errors with this when i tried just using this.NAMEHERE.
+    I ran into a lot of errors with this when i tried just using this.NAMEHERE instead of super.
 
 6. added notes to the files to explain what was happening
 
